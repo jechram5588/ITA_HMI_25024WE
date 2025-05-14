@@ -1,0 +1,67 @@
+
+
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      ~                     CAD-KAS PDF 2 DXF 4.0                      ~
+      ~                                                                ~                     
+      ~                             MANUAL                             ~
+      ~                                                                ~
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+                              ~~~~~~~~~~~~
+                              ~ Contents ~
+                              ~~~~~~~~~~~~
+
+1.    What the program does
+2.    Copyright and Warranties
+3.    Hardware and Software requirements
+4.    Contact
+
+
+1.What the program does
+~~~~~~~~~~~~~~~~~~~~~~~
+  Do you get PDF files with CAD drawings inside? Now you can
+  extract these drawings and save it as DXF file and open it
+  in you CAD application.
+  PDF 2 DXF can open PDF files and save all vector objects
+  as DXF file. Version 2.0 can now also convert text objects! 
+  Version 3.0 can also recognize lines in pictures and export
+  the lines as dxf file.
+  Version 4.0 has a function to vectorize all text objects.
+  It can convert the complete page into a picture and then
+  recognize the lines in this picture. And it can recognize
+  lines in very large pictures in full resolution.
+
+
+2.Copyright and Warranties
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+  This is a production of CAD-KAS Computersoftware.
+  This program was programmed by Christian Alexander Daniel Kassler.
+  All rights reserved.
+
+  CAD-KAS DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED,
+  INCLUDING THE WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  PARTICULAR PURPOSE.  
+  IN NO EVENT SHALL CAD-KAS BE LIABLE FOR ANY 
+  DAMAGES WHATSOEVER INCLUDING DIRECT, INDIRECT, INCIDENTAL, 
+  CONSEQUENTIAL, LOSS OF BUSINESS PROFITS OR SPECIAL DAMAGES, 
+  EVEN IF CAD-KAS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH 
+  DAMAGES.
+
+
+3.Hardware and Software requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Hardware: Pentium PC, 16 MB RAM
+  Software: Windows XP/Vista/7/8/10 and newer
+
+
+4.Contact
+~~~~~~~~
+  Address:   CAD-KAS GbR; Angerstraﬂe 23; Germany 04420 Markranstaedt
+  Tel:       +49-34205-5-88-99
+  Fax:       +49-34205-8-38-74
+  eMail:     info@cadkas.com
+  Internet:  http://www.cadkas.com
+
+
+                           - END -

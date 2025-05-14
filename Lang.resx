@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnLogClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnOpenPDF" xml:space="preserve">
+    <value>Open PDF</value>
+  </data>
+  <data name="btnReload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="btnSendtoMarker" xml:space="preserve">
+    <value>Send to Marker</value>
+  </data>
+  <data name="btnStopMarking" xml:space="preserve">
+    <value>Stop marking</value>
+  </data>
+  <data name="btnTemplateEditor_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnTemplateEditor_AddNode" xml:space="preserve">
+    <value>Add Label</value>
+  </data>
+  <data name="btnTemplateEditor_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnTemplateEditor_DeleteNode" xml:space="preserve">
+    <value>Delete Label</value>
+  </data>
+  <data name="btnTemplateEditor_Edit" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnTemplateEditor_ImportNodes" xml:space="preserve">
+    <value>Import Labels</value>
+  </data>
+  <data name="btnZoom1" xml:space="preserve">
+    <value>Zoom </value>
+  </data>
+  <data name="btnZoomAll" xml:space="preserve">
+    <value>Zoom all</value>
+  </data>
+  <data name="gbSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="gbTemplateEditor_Labels" xml:space="preserve">
+    <value>Labels Data</value>
+  </data>
+  <data name="gbTemplateEditor_TextData" xml:space="preserve">
+    <value>Text Data</value>
+  </data>
+  <data name="gbXMLFiles" xml:space="preserve">
+    <value>XML Files</value>
+  </data>
+  <data name="lbAuxFolder" xml:space="preserve">
+    <value>Auxiliar folder</value>
+  </data>
+  <data name="lbFilterDgv" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="lbIPMarker" xml:space="preserve">
+    <value>No Serial</value>
+  </data>
+  <data name="lbMensajeTitulo" xml:space="preserve">
+    <value>MESSAGE</value>
+  </data>
+  <data name="lbModAutQuantityCompleted" xml:space="preserve">
+    <value>Quantity completed</value>
+  </data>
+  <data name="lbModAutQuantityRequired" xml:space="preserve">
+    <value>Quantity required</value>
+  </data>
+  <data name="lbModAutTemplate" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="lbModeAutDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lbModeAutEndSerial" xml:space="preserve">
+    <value>Ending serial</value>
+  </data>
+  <data name="lbModeAutMaterial" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="lbModeAutPDF" xml:space="preserve">
+    <value>PDF File</value>
+  </data>
+  <data name="lbModeAutStarSerial" xml:space="preserve">
+    <value>Starting serial</value>
+  </data>
+  <data name="lbParameterLaminedPlate" xml:space="preserve">
+    <value>LAMINED PLATE</value>
+  </data>
+  <data name="lbParameterPaintedPlate" xml:space="preserve">
+    <value>PAINTED PLATE</value>
+  </data>
+  <data name="lbParametersFillLineInterval" xml:space="preserve">
+    <value>Fill Line Interval</value>
+  </data>
+  <data name="lbParametersLaserPower" xml:space="preserve">
+    <value>Laser Power</value>
+  </data>
+  <data name="lbParametersPulseFrequency" xml:space="preserve">
+    <value>Pulse Frecuency</value>
+  </data>
+  <data name="lbParametersRepetition" xml:space="preserve">
+    <value>Repetition</value>
+  </data>
+  <data name="lbParametersScanSpeed" xml:space="preserve">
+    <value>Scan Speed</value>
+  </data>
+  <data name="lbParametersSpotVarieable" xml:space="preserve">
+    <value>Spot Variable</value>
+  </data>
+  <data name="lbParameterstitle" xml:space="preserve">
+    <value>MARKING PARAMETERS</value>
+  </data>
+  <data name="lbPathFiles" xml:space="preserve">
+    <value>Main folder</value>
+  </data>
+  <data name="lbSerialMarker" xml:space="preserve">
+    <value>Serial Number (For USB)</value>
+  </data>
+  <data name="lbSettingTitle" xml:space="preserve">
+    <value>APLICATION SETTINGS</value>
+  </data>
+  <data name="lbTemplateEditorWidth" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="lbTemplateEditor_CharFullWidth" xml:space="preserve">
+    <value>Char Full Widht</value>
+  </data>
+  <data name="lbTemplateEditor_CharHeight" xml:space="preserve">
+    <value>Char Height</value>
+  </data>
+  <data name="lbTemplateEditor_CharWidth" xml:space="preserve">
+    <value>Char Width</value>
+  </data>
+  <data name="lbTemplateEditor_Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="lbTemplateEditor_LabelAngle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="lbTemplateEditor_TemplateName" xml:space="preserve">
+    <value>Template Name</value>
+  </data>
+  <data name="lbTemplateEditor_Templates" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="lbTemplateEditor_TextAngle" xml:space="preserve">
+    <value>Text Angle</value>
+  </data>
+  <data name="lbTemplates_Title" xml:space="preserve">
+    <value>TEMPLATE EDITOR</value>
+  </data>
+  <data name="menuExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="menuLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="menuLanguage_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="menuLanguage_Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="menuLanguage_Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="menuSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="menuSettings_AppSettings" xml:space="preserve">
+    <value>Application Settings</value>
+  </data>
+  <data name="menuSettings_Parameters" xml:space="preserve">
+    <value>Marking Parameters</value>
+  </data>
+  <data name="menuSettings_TemplateEditor" xml:space="preserve">
+    <value>Template Editor</value>
+  </data>
+  <data name="menuSetting_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="mjs_ReloadTemplateFirst" xml:space="preserve">
+    <value>Reload Template First</value>
+  </data>
+  <data name="msj_AutomaticMode" xml:space="preserve">
+    <value>Automatic mode</value>
+  </data>
+  <data name="msj_Cancel" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="msj_CloseTheApplication" xml:space="preserve">
+    <value>Do you want to close the application?</value>
+  </data>
+  <data name="msj_ConnectError" xml:space="preserve">
+    <value>Connection Error</value>
+  </data>
+  <data name="msj_Connecting" xml:space="preserve">
+    <value>Connecting</value>
+  </data>
+  <data name="msj_ConnectOK" xml:space="preserve">
+    <value>Succesfully connected to </value>
+  </data>
+  <data name="msj_ConvertDXFtoMHL" xml:space="preserve">
+    <value>Convert DXF to MHL</value>
+  </data>
+  <data name="msj_ConvertingFilesPleaseWait" xml:space="preserve">
+    <value>Converting files Please wait</value>
+  </data>
+  <data name="msj_ConvertPDFtoDXF" xml:space="preserve">
+    <value>Convert PDF to DXF</value>
+  </data>
+  <data name="msj_DeleteTemplate" xml:space="preserve">
+    <value>Do you want delete the template: </value>
+  </data>
+  <data name="msj_DeletingTemplate" xml:space="preserve">
+    <value>Deleting template</value>
+  </data>
+  <data name="msj_Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="msj_ErrorOccurred" xml:space="preserve">
+    <value>An error has occurred</value>
+  </data>
+  <data name="msj_ErrorSaving" xml:space="preserve">
+    <value>Error when saving parameters</value>
+  </data>
+  <data name="msj_FileAlreadyExists" xml:space="preserve">
+    <value>File already exists</value>
+  </data>
+  <data name="msj_FileAlreadyExistsReplaceIt" xml:space="preserve">
+    <value>The file already exists, Do you want to replace it?</value>
+  </data>
+  <data name="msj_FileNotFoundTryOpenPDF" xml:space="preserve">
+    <value>File not found, Try opening the PDF first</value>
+  </data>
+  <data name="msj_InvalidIP" xml:space="preserve">
+    <value>No Valid IP Adress</value>
+  </data>
+  <data name="msj_InvalidXMLFile" xml:space="preserve">
+    <value>Invalid XML File</value>
+  </data>
+  <data name="msj_IPNotValid" xml:space="preserve">
+    <value>IP NOT Valid</value>
+  </data>
+  <data name="msj_LoadingLabel" xml:space="preserve">
+    <value>Loading Label</value>
+  </data>
+  <data name="msj_LoadingParameters" xml:space="preserve">
+    <value>Loading parameters</value>
+  </data>
+  <data name="msj_LoadingTemplate" xml:space="preserve">
+    <value>Loading template</value>
+  </data>
+  <data name="msj_LoadMouseCoordenates" xml:space="preserve">
+    <value>Loading mouse coordenates</value>
+  </data>
+  <data name="msj_ManualMode" xml:space="preserve">
+    <value>Manual mode</value>
+  </data>
+  <data name="msj_MarkingAbort" xml:space="preserve">
+    <value>Stop Marking Detected</value>
+  </data>
+  <data name="msj_MarkingDone" xml:space="preserve">
+    <value>Marking process finish</value>
+  </data>
+  <data name="msj_Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="msj_NotConnected" xml:space="preserve">
+    <value>Not Conected</value>
+  </data>
+  <data name="msj_ParameterLoadingCompleted" xml:space="preserve">
+    <value>Parameter loading completed</value>
+  </data>
+  <data name="msj_PathNotFind" xml:space="preserve">
+    <value>Path not find it</value>
+  </data>
+  <data name="msj_QuantityCompleted" xml:space="preserve">
+    <value>Quantity Completed</value>
+  </data>
+  <data name="msj_RenameTemplate" xml:space="preserve">
+    <value>Do you want rename the file?</value>
+  </data>
+  <data name="msj_Save" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="msj_SavedSuccessfully" xml:space="preserve">
+    <value>Saved successfully</value>
+  </data>
+  <data name="msj_SavingDXF" xml:space="preserve">
+    <value>Saving DXF File</value>
+  </data>
+  <data name="msj_Sending" xml:space="preserve">
+    <value>Sending</value>
+  </data>
+  <data name="msj_SendToMarking" xml:space="preserve">
+    <value>Do you want send it to marker?</value>
+  </data>
+  <data name="msj_StartMarking" xml:space="preserve">
+    <value>Marking Plates</value>
+  </data>
+  <data name="msj_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="msj_TemplateLoaded" xml:space="preserve">
+    <value>Template Loaded</value>
+  </data>
+  <data name="msj_TemplateWithoutCoordinates" xml:space="preserve">
+    <value>Template without coordinates</value>
+  </data>
+  <data name="msj_ThereNoTemplate" xml:space="preserve">
+    <value>There is no template</value>
+  </data>
+  <data name="msj_YouHaveNotSelectedaPDF" xml:space="preserve">
+    <value>You have not selected a pdf</value>
+  </data>
+  <data name="rbSearchByFolder" xml:space="preserve">
+    <value>Search by folder</value>
+  </data>
+  <data name="rbSearchByString" xml:space="preserve">
+    <value>Search by string</value>
+  </data>
+</root>

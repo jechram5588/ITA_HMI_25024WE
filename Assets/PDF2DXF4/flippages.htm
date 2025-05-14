@@ -1,0 +1,101 @@
+<script type="text/javascript">
+
+$anzpages=%%ANZPAGES%%;
+$aktpage=1;
+
+function zoompagein()
+{
+  document.all.picture1.width=document.all.picture1.width+50;
+  document.all.picture2.width=document.all.picture2.width+50; 
+}
+
+function zoompageout()
+{
+  document.all.picture1.width=document.all.picture1.width-50;
+  document.all.picture2.width=document.all.picture2.width-50; 
+}
+
+function paintnew()
+{
+    document.all.picture1.src="catalogpage"+(2*$aktpage-2)+".jpg";
+    document.all.picture2.src="catalogpage"+(2*$aktpage-1)+".jpg";    
+    document.all.showpage.value=($aktpage*2-2)+"/"+($aktpage*2-1);
+}
+
+function flipinpage0()
+{
+   if ((2*$aktpage-2)!=0) 
+   document.all.picture1.src="catalogpageflip"+(2*$aktpage-2)+".jpg";
+}
+
+function flipinpage1()
+{
+   document.all.picture2.src="catalogpageflip"+(2*$aktpage-1)+".jpg";    
+}
+
+
+function pagefirst()
+{
+    $aktpage=1;
+    paintnew();
+}
+
+function pagelast()
+{
+    $aktpage=$anzpages;
+    paintnew();
+}
+
+function pageback()
+{
+  if ($aktpage>1)
+  {
+    $aktpage--;
+    paintnew();  
+  }
+}
+
+function pageforward()
+{
+  if ($aktpage<$anzpages)
+  {
+    $aktpage++;
+    paintnew();
+  }
+}
+
+function gotopagenr()
+{
+  $newaktpage=1+Math.floor((document.all.showpage.value)/2);
+  if ($newaktpage>$anzpages) $newaktpage=$anzpages;
+  if ($newaktpage>=1)
+  {
+    $aktpage=$newaktpage;
+    paintnew();
+  }
+}
+</script>
+
+<table align=center>
+<tr>
+<td><img src="vcr-start.gif" style="cursor:pointer" border=0 onMouseDown="pagefirst();"></td>
+<td><img src="vcr-previous.gif" style="cursor:pointer" border=0 onMouseDown="pageback();"></td>
+<td><input type=text value="1" size=6 name="showpage" onchange="gotopagenr();"></td>
+<td><img src="vcr-next.gif" style="cursor:pointer" border=0 onMouseDown="pageforward();"></td>
+<td><img src="vcr-end.gif" style="cursor:pointer" border=0 onMouseDown="pagelast();"></td>
+
+<td><img src="magnifying-glass-plus.gif" style="cursor:pointer" border=0 onMouseDown="zoompagein();"></td>
+<td><img src="magnifying-glass-minus.gif" style="cursor:pointer" border=0 onMouseDown="zoompageout();"></td>
+
+
+</tr>
+</table>
+
+<p>
+<table cellspacing=0 cellpadding=0>
+<tr>
+<td><img src="catalogpage0.jpg" onMousemove="flipinpage0();" onMouseout="paintnew();" style="cursor:pointer" name="picture1" onMouseDown="pageback();"></td>
+<td><img src="catalogpage1.jpg" onMousemove="flipinpage1();" onMouseout="paintnew();" style="cursor:pointer" name="picture2" onMouseDown="pageforward();"></td>
+</tr>
+</table>
+
