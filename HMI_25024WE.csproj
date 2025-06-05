@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\MarkerTCPClient.cs" />
     <Compile Include="Forms\Form_About.cs">
       <SubType>Form</SubType>
     </Compile>
