@@ -636,11 +636,13 @@ namespace HMI_25024WE
                 if (!IsCamaraON)
                 {
                     axMBActX1.Operation.IsCameraFinderView = true;
+                    axMBActX1.Operation.SetLighting(true);
                     IsCamaraON = true;
                 }
                 else
                 {
                     axMBActX1.Operation.IsCameraFinderView = false;
+                    axMBActX1.Operation.SetLighting(false);
                     IsCamaraON = false;
                 }
             }
@@ -1102,8 +1104,6 @@ namespace HMI_25024WE
         {
             try
             {
-                if (Connect(true))
-                {
                     axMBActX1.Context = ContextTypes.CONTEXT_CONTROLLER;
                     fDialog.fMessage = Lang.msj_Sending;
                     AppendText(Lang.msj_Sending);
@@ -1121,7 +1121,6 @@ namespace HMI_25024WE
                         IsJobSenditOK = false;
                         EnableGbCtrls(true);
                     }
-                }
             }
             catch (Exception ex)
             {
@@ -1177,7 +1176,12 @@ namespace HMI_25024WE
 
         private void button6_Click(object sender, EventArgs e)
         {
-            rtbLogger.AppendText(MarkerTCPClient.SendCommand("WX,PRG=0000,BLK=000,3DShape=1,0"));
+            rtbLogger.AppendText(MarkerTCPClient.SendCommand(textBox1.Text));
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Camera();
         }
 
         private void btnRefreshdgv_Click(object sender, EventArgs e) => LoadXMLFilesToDGV();
