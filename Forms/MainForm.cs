@@ -32,11 +32,12 @@ namespace HMI_25024WE
         private bool isManualMode = false, IsCamaraON = false, IsConnected = false, isTempleteOK = false, IsJobSenditOK = false, WasAborted = false, IsFormClosing = false;
         private int ControllerSerialNo = 0;
         private Int64 LabelsSendit = 0;
-            
+
 
         private Models.TemplateCoordenates Template = null;
         public Models.MarkingParameters MarkingParameters = new Models.MarkingParameters();
         private CultureInfo Idioma;
+        private MarkerTCPClient MarkerTCPClient;
 
         List<Models.Plates> Plates = new List<Models.Plates>();
         List<Models.XMLFiles> XMLFiles = new List<Models.XMLFiles>();
@@ -63,6 +64,7 @@ namespace HMI_25024WE
             {
                 axMBActX1.Comm.ConnectionType = ConnectionTypes.CONNECTION_ETHERNET;
                 axMBActX1.Comm.IpAddress = IP_Marker;
+                MarkerTCPClient = new MarkerTCPClient(IP_Marker, 50002);
             }
             else
             {
@@ -291,18 +293,18 @@ namespace HMI_25024WE
                             labels2Make = required;
                         else
                             if (required >= completed)
-                                labels2Make = required - completed;
-                            else
-                            {
-                                fDialog.CloseForm = true;
-                                AppendText(Lang.msj_QuantityCompleted);
-                                return;
-                            }
+                            labels2Make = required - completed;
+                        else
+                        {
+                            fDialog.CloseForm = true;
+                            AppendText(Lang.msj_QuantityCompleted);
+                            return;
+                        }
                         progress = "nodes";
                         if (Template.Coordinates.Count > 0)
                         {
                             int cont = 0;
-                            
+
                             Int64 labelAdded = 0;
 
                             foreach (Models.Coordenate item in Template.Coordinates.OrderBy(a => a.Node))
@@ -392,7 +394,7 @@ namespace HMI_25024WE
         private bool LoadTemplateCoordenates()
         {
             string Text = "";
-            this.Invoke((MethodInvoker)delegate (){Text = cbModAutTemplate.Text;});
+            this.Invoke((MethodInvoker)delegate () { Text = cbModAutTemplate.Text; });
 
             string file = Path.Combine(Assets, Text + ".json");
             if (File.Exists(file))
@@ -504,7 +506,7 @@ namespace HMI_25024WE
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{Lang.msj_Message} {ex.Message}", Lang.msj_Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Lang.msj_InvalidXMLFile}", Lang.msj_Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 CleanCtrls();
                 return false;
             }
@@ -688,7 +690,7 @@ namespace HMI_25024WE
             {
                 fDialog.CloseForm = true;
                 AppendText(Lang.msj_StartMarking);
-                axMBActX1.Operation.StartMarking();
+                //axMBActX1.Operation.StartMarking();
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
@@ -1094,6 +1096,88 @@ namespace HMI_25024WE
             if (!IsFormClosing && MessageBox.Show(Lang.msj_CloseTheApplication, Lang.msj_Message, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 == DialogResult.No)
                 e.Cancel = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Connect(true))
+                {
+                    axMBActX1.Context = ContextTypes.CONTEXT_CONTROLLER;
+                    fDialog.fMessage = Lang.msj_Sending;
+                    AppendText(Lang.msj_Sending);
+                    Thread.Sleep(500);
+                    if (axMBActX1.SendControllerJob(0, Path.Combine(AuxFolder, TemplateFile)))
+                    {
+                        fDialog.fMessage = Lang.btnSendtoMarker;
+                        AppendText(Lang.msj_SavedSuccessfully);
+                        IsJobSenditOK = true;
+                    }
+                    else
+                    {
+                        fDialog.CloseForm = true;
+                        AppendText(Lang.msj_ErrorSaving);
+                        IsJobSenditOK = false;
+                        EnableGbCtrls(true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                EnableGbCtrls(true);
+                fDialog.CloseForm = true;
+                AppendText("Send Job To Cotroller " + Lang.msj_ErrorOccurred + " " + ex.Message);
+            }
+            finally
+            {
+                fDialog.CloseForm = true;
+                AppendText("job enviado");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (axMBActX1.ReceiveControllerJob(Path.Combine(AuxFolder, TemplateFile), 0))
+                {
+                    rtbLogger.AppendText("jobLeido");
+                    try
+                    {
+                        if (axMBActX1.OpenJob(Path.Combine(AuxFolder, TemplateFile)))
+                        {
+                            rtbLogger.AppendText("job Abierto");
+                        }
+                    }
+                    catch (System.Runtime.InteropServices.COMException error)
+                    {
+                        MessageBox.Show(error.Message);
+                    }
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            rtbLogger.AppendText(MarkerTCPClient.Ready());
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (!IsConnected)
+                Connect(true);
+            else
+                Connect(false);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            rtbLogger.AppendText(MarkerTCPClient.SendCommand("WX,PRG=0000,BLK=000,3DShape=1,0"));
         }
 
         private void btnRefreshdgv_Click(object sender, EventArgs e) => LoadXMLFilesToDGV();
