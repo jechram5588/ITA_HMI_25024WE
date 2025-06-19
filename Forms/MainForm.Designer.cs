@@ -49,6 +49,7 @@ namespace HMI_25024WE
             this.menuSetting_About = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.gbData = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.txtModeAutPDF = new System.Windows.Forms.TextBox();
             this.lbModeAutPDF = new System.Windows.Forms.Label();
             this.nudModAutQuantityRequired = new System.Windows.Forms.NumericUpDown();
@@ -87,14 +88,13 @@ namespace HMI_25024WE
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lbFilterDgv = new System.Windows.Forms.Label();
             this.gbXMLFiles = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gbSearch.SuspendLayout();
             this.menu.SuspendLayout();
             this.gbData.SuspendLayout();
@@ -300,6 +300,16 @@ namespace HMI_25024WE
             this.gbData.Size = new System.Drawing.Size(415, 346);
             this.gbData.TabIndex = 11;
             this.gbData.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(217, 112);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 26;
+            this.button7.Text = "camara";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // txtModeAutPDF
             // 
@@ -799,19 +809,31 @@ namespace HMI_25024WE
             this.gbXMLFiles.TabStop = false;
             this.gbXMLFiles.Text = "XML Files";
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(6, 62);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(628, 22);
+            this.textBox1.TabIndex = 27;
+            this.textBox1.Text = "WX,PRG=0000,3DS=000,3DShapePosition=A,B,C,D,E,F";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(388, 10);
+            this.button6.Location = new System.Drawing.Point(388, 13);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 25;
-            this.button6.Text = "fit shape";
+            this.button6.Text = "Command";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(308, 12);
+            this.button5.Location = new System.Drawing.Point(307, 13);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 24;
@@ -864,28 +886,6 @@ namespace HMI_25024WE
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(217, 112);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "camara";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(65, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 22);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.Text = "WX,PRG=0000,BLK=000,3DShape=1,0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 

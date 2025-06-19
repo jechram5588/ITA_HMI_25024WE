@@ -20,7 +20,20 @@ namespace HMI_25024WE
     public partial class Form1 : Form
     {
 
-        private string Assets, Archivo,TempC; 
+        private string Assets, Archivo,TempC;
+
+        // Dll Set Focus
+        [DllImport("user32.dll")]
+        public static extern bool ShowWindowAsync(HandleRef hWnd, int nCmdShow);
+        [DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr WindowHandle);
+        public const int SW_RESTORE = 9;
+        // Dll mouse Click
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        private const int MOUSEEVENTF_LEFTUP = 0x04;
 
         public Form1()
         {
@@ -260,6 +273,84 @@ namespace HMI_25024WE
             {
                 Console.WriteLine("Termine");
             }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string pdfFilePath = @"C:\Jech_Data\0. Desktop\WEG Files\182-4TC1.pdf";
+
+            string impresora = "KEYENCE Laser Marker";
+            string sumatraPath = @"C:\Jech_Data\0. Desktop\WEG Files\SumatraPDF\SumatraPDF-3.5.2-64.exe";
+
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = sumatraPath,
+                Arguments = $"-print-to \"{impresora}\" \"{pdfFilePath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            Process.Start(psi);
+
+            bool app = true;
+            string proceso = "MarkingBuilderPlus";
+
+            while (app)
+            {
+                Console.WriteLine("Close marking");
+                Process[] pname = Process.GetProcessesByName(proceso);
+                if (pname.Length > 0)
+                {
+                    Thread.Sleep(10000);
+                    FocusProcess(pname[0].ProcessName);
+                    Console.WriteLine("Focus");
+                    break;
+                }
+                Thread.Sleep(1000);
+            }
+            DoMouseClick(800, 600);
+            Thread.Sleep(1000);
+            DoMouseClick(800, 600);
+            //FocusProcess(proceso);
+
+            SendKeys.SendWait("{ENTER}");
+            Thread.Sleep(2000);
+
+            DoMouseClick(800, 500);
+            Thread.Sleep(1000);
+            DoMouseClick(800, 500);
+            SendKeys.SendWait("y");
+
+            SendKeys.SendWait("(%{F4})");
+            Thread.Sleep(1000);
+            
+            SendKeys.SendWait("{N}");
+        }
+
+
+        public static void DoMouseClick(int x, int y)
+        {
+            // Mueve el cursor
+            Cursor.Position = new System.Drawing.Point(x, y);
+            // Clic izquierdo
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)x, (uint)y, 0, 0);
+        }
+
+        private void FocusProcess(string procName)
+        {
+            Process[] objProcesses = System.Diagnostics.Process.GetProcessesByName(procName);
+            if (objProcesses.Length > 0)
+            {
+                IntPtr hWnd = IntPtr.Zero;
+                hWnd = objProcesses[0].MainWindowHandle;
+                ShowWindowAsync(new HandleRef(null, hWnd), SW_RESTORE);
+                SetForegroundWindow(objProcesses[0].MainWindowHandle);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            DoMouseClick(Convert.ToInt32(nudX.Value),Convert.ToInt32(nudY.Value));
         }
 
         private void button7_Click(object sender, EventArgs e)

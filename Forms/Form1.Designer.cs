@@ -70,6 +70,10 @@ namespace HMI_25024WE
             this.pbFlagUSA = new System.Windows.Forms.PictureBox();
             this.pbFlagMex = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.nudY = new System.Windows.Forms.NumericUpDown();
+            this.nudX = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -86,6 +90,8 @@ namespace HMI_25024WE
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlagUSA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlagMex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudX)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOnline
@@ -519,7 +525,7 @@ namespace HMI_25024WE
             this.axMBActX1.Location = new System.Drawing.Point(451, 8);
             this.axMBActX1.Name = "axMBActX1";
             this.axMBActX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMBActX1.OcxState")));
-            this.axMBActX1.Size = new System.Drawing.Size(763, 537);
+            this.axMBActX1.Size = new System.Drawing.Size(931, 806);
             this.axMBActX1.TabIndex = 27;
             // 
             // pbFlagUSA
@@ -553,11 +559,69 @@ namespace HMI_25024WE
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(27, 551);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(103, 23);
+            this.button10.TabIndex = 31;
+            this.button10.Text = "print";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(27, 593);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(103, 23);
+            this.button11.TabIndex = 32;
+            this.button11.Text = "pMouse";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // nudY
+            // 
+            this.nudY.Location = new System.Drawing.Point(195, 596);
+            this.nudY.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudY.Name = "nudY";
+            this.nudY.Size = new System.Drawing.Size(53, 20);
+            this.nudY.TabIndex = 39;
+            this.nudY.Value = new decimal(new int[] {
+            4500,
+            0,
+            0,
+            0});
+            // 
+            // nudX
+            // 
+            this.nudX.Location = new System.Drawing.Point(136, 596);
+            this.nudX.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudX.Name = "nudX";
+            this.nudX.Size = new System.Drawing.Size(53, 20);
+            this.nudX.TabIndex = 38;
+            this.nudX.Value = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1226, 557);
+            this.ClientSize = new System.Drawing.Size(1394, 826);
+            this.Controls.Add(this.nudY);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.nudX);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.pbFlagUSA);
             this.Controls.Add(this.pbFlagMex);
@@ -597,6 +661,8 @@ namespace HMI_25024WE
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlagUSA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlagMex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,6 +709,10 @@ namespace HMI_25024WE
         private System.Windows.Forms.PictureBox pbFlagUSA;
         private System.Windows.Forms.PictureBox pbFlagMex;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.NumericUpDown nudY;
+        private System.Windows.Forms.NumericUpDown nudX;
     }
 }
 

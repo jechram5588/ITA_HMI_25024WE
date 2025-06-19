@@ -18,6 +18,7 @@ namespace HMI_25024WE
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form_TemplateEditor() );
             Application.Run(new MainForm());
+            //Application.Run(new Form1());
         }
     }
 }
